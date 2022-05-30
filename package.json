@@ -1,0 +1,24 @@
+{
+  "name": "pdf-compressor-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Hasan Al-Qaisi",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@ilovepdf/ilovepdf-nodejs": "^0.1.2",
+    "body-parser": "^1.20.0",
+    "convertapi": "^1.11.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "node-telegram-bot-api": "^0.57.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node-telegram-bot-api": "^0.57.1"
+  }
+}
