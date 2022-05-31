@@ -9,6 +9,9 @@
     "dev": "nodemon ./src/index.ts",
     "build": "tsc"
   },
+  "engines": {
+    "node": "16.13.1"
+  },
   "dependencies": {
     "@ilovepdf/ilovepdf-nodejs": "^0.1.2",
     "body-parser": "^1.20.0",
