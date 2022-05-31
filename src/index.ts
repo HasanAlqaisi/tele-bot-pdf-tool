@@ -2,12 +2,16 @@ import TelegramBot from "node-telegram-bot-api";
 require("dotenv").config();
 import ConvertAPI from "convertapi";
 import fs from "fs";
-import express from "express";
+import express, { Request, Response } from "express";
 
 const app = express();
 
 app.listen(3000, "0.0.0.0", () => {
   console.log("server is running on port 3000");
+});
+
+app.get("/", (req: Request, res: Response) => {
+  return res.send("hello world");
 });
 
 const convertapi = new ConvertAPI(process.env.PDF_API_SECRET!);
