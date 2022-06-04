@@ -41,12 +41,13 @@ export default async (
         // Naming the compressed file
         const compressedFileName = document.file_name?.replace(
           ".pdf",
-          "_compressed"
+          "_compressed.pdf"
         );
 
         // Send the compressed file to the user
         await bot.sendDocument(chat.id, compressedFile, undefined, {
           filename: compressedFileName,
+          contentType: "application/pdf",
         });
 
         // Delete the files from storage

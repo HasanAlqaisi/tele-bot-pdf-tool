@@ -1,6 +1,6 @@
 import TelegramBot from "node-telegram-bot-api";
 require("dotenv").config();
-import express from "express";
+import express, { Request, Response } from "express";
 import compressPdf from "./compress-pdf";
 import ConvertAPI from "convertapi";
 import convertWordToPdf from "./convert-word-to-pdf";
@@ -13,6 +13,10 @@ const port = parseInt(process.env.PORT as string, 10) || 3000;
 
 app.listen(port, "0.0.0.0", () => {
   console.log("server is running on port 3000");
+});
+
+app.get("/", (_: Request, res: Response) => {
+  return res.send("hello world");
 });
 
 const { TOKEN } = process.env;

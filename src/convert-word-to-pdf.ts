@@ -37,11 +37,12 @@ export default async (
       const convertedFile = fs.readFileSync(savedFiles[0]);
 
       // get the name of the converted file
-      const convertedFileName = path.parse(document.file_name ?? "").name;
+      const parsedFile = path.parse(document.file_name ?? "");
 
       // Send the file to the user
       await bot.sendDocument(chat.id, convertedFile, undefined, {
-        filename: convertedFileName,
+        filename: parsedFile.name + ".pdf",
+        contentType: "application/pdf",
       });
 
       // Delete the saved files from storage
